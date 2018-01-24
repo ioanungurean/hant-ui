@@ -1,0 +1,6 @@
+@import 'xbem';
+@import 'patterns';
+
+@include block(app) {
+  background-color: map-get($primary, ink);
+}
