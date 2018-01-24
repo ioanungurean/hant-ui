@@ -1,9 +1,9 @@
 {
-  "name": "react-app",
+  "name": "hant-ui",
   "version": "1.2.3",
-  "description": "react-app",
+  "description": "Hazard Smart Assistant",
   "main": "index.js",
-  "author": "Ioan Ungurean",
+  "author": "Ioan Ungurean & Ilie Vieru",
   "license": "MIT",
   "scripts": {
     "prebuild:dev": "rimraf public",
