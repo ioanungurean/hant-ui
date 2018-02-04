@@ -1,0 +1,35 @@
+@import 'xbem';
+@import 'patterns';
+
+@include block(building-plan) {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(3, 100px);
+  grid-gap: 5px;
+
+  @include element(room) {
+    display: grid;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: antiquewhite;
+      cursor: pointer;
+    }
+
+    @include modifier(hallway1) {
+      grid-column: 1 / 5;
+    }
+
+    @include modifier(hallway2) {
+      grid-column: 6 / 10;
+    }
+
+    @include modifier(hallway3) {
+      grid-column: 5 / 6;
+      grid-row: 1 / 4;
+    }
+  }
+}

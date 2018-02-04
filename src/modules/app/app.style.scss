@@ -1,6 +1,13 @@
 @import 'xbem';
+@import 'layout';
 @import 'patterns';
+@import 'blueprint';
 
 @include block(app) {
-  background-color: map-get($primary, ink);
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr;
+  grid-template-areas:
+    'header  header  header'
+    'sidebar content content';
+  grid-gap: 10px;
 }

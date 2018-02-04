@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import Title from 'components/title';
+
+import Header from 'components/header';
+import Sidebar from 'components/sidebar';
+import BuildingPlan from 'modules/building-plan';
 
 import './app.style.scss';
 
@@ -7,7 +10,9 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <Title title="React App - Starter" />
+        <Header />
+        <Sidebar />
+        <BuildingPlan />
       </div>
     );
   }
