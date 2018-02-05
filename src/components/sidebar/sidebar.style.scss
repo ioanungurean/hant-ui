@@ -2,5 +2,10 @@
 @import 'patterns';
 
 @include block(sidebar) {
-  grid-area: sidebar;
+  margin-top: 1rem;
+  margin-right: 1rem;
+
+  & > .menu {
+    height: 46rem;
+  }
 }

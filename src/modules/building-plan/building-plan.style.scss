@@ -2,8 +2,8 @@
 @import 'patterns';
 
 @include block(building-plan) {
-  grid-area: content;
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(9, 1fr);
   grid-template-rows: repeat(3, 100px);
   grid-gap: 5px;

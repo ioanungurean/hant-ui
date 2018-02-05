@@ -1,13 +1,9 @@
 @import 'xbem';
 @import 'layout';
 @import 'patterns';
-@import 'blueprint';
 
 @include block(app) {
-  display: grid;
-  grid-template-columns: 200px 1fr 1fr;
-  grid-template-areas:
-    'header  header  header'
-    'sidebar content content';
-  grid-gap: 10px;
+  @include element(content) {
+    display: flex;
+  }
 }

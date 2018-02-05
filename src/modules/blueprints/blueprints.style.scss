@@ -1,0 +1,8 @@
+@import 'xbem';
+@import 'patterns';
+
+@include block(blueprints) {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}

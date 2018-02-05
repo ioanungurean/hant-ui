@@ -42,7 +42,7 @@ module.exports = (config) => {
     },
 
     output: {
-      path: path.resolve(process.cwd(), 'public'),
+      path: path.join(__dirname, 'public'),
       publicPath: '/',
       filename: '[name].js',
     },
@@ -51,6 +51,7 @@ module.exports = (config) => {
 
     devServer: {
       contentBase: path.resolve('public'),
+      publicPath: '/',
       historyApiFallback: true,
       hot: true,
       port: 9000,
