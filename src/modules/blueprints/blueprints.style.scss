@@ -8,5 +8,9 @@
 
   @include element(plan) {
     padding: 14px;
+
+    @include element(header) {
+      margin-top: 28px!important;
+    }
   }
 }

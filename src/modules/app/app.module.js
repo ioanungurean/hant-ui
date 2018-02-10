@@ -11,7 +11,6 @@ import './app.style.scss';
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.state = { activeItem: 'blueprints' };
     this.handleItemClick = this.handleItemClick.bind(this);
   }

@@ -2,7 +2,6 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Segment } from 'semantic-ui-react';
 
-// import Dashboard from 'modules/dashboard';
 import Blueprints from 'modules/blueprints';
 import Patients from 'modules/patients';
 import Sensors from 'modules/sensors';
@@ -11,7 +10,7 @@ import Logs from 'modules/logs';
 
 import './main.style.scss';
 
-const Main = () => {
+const Main = (props) => {
   return (
     <Segment className='main'>
       <Switch>

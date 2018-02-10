@@ -3,10 +3,14 @@ import PropTypes from 'prop-types';
 
 import './building-plan.style.scss';
 
+const rooms = [
+  'room1', 'room2', 'room3', 'room4', 'hallway3', 'room5', 'room6', 'room7', 'room8', 'hallway1',
+  'hallway2', 'room9', 'room10', 'room11', 'room12', 'room13', 'room14', 'room15', 'room16',
+];
+
 class BuildingPlan extends Component {
   constructor(props) {
     super(props);
-
     this.state = { idRoomClicked: null };
     this.renderRoom = this.renderRoom.bind(this);
     this.roomClicked = this.roomClicked.bind(this);
@@ -28,27 +32,22 @@ class BuildingPlan extends Component {
     );
   }
 
-  roomClicked(e) {
-    if (e.target.id === '') return;
+  roomClicked(event) {
+    if (event.target.id === '') return;
 
-    const idRoomClicked = e.target.id === this.state.idRoomClicked ? null : e.target.id;
+    const idRoomClicked = event.target.id === this.state.idRoomClicked ? null : event.target.id;
     this.setState({
       idRoomClicked: idRoomClicked
     }, () => {
       this.props.roomClicked(this.state.idRoomClicked);
     });
-    e.stopPropagation();
+    event.stopPropagation();
   }
 
   render() {
-    const roomArr = [
-      'room1', 'room2', 'room3', 'room4', 'hallway3', 'room5', 'room6', 'room7', 'room8', 'hallway1',
-      'hallway2', 'room9', 'room10', 'room11', 'room12', 'room13', 'room14', 'room15', 'room16',
-    ];
-
     return (
       <div className='building-plan' onClick={this.roomClicked}>
-        { roomArr.map((room, index) => this.renderRoom(room, index)) }
+        { rooms.map((room, index) => this.renderRoom(room, index)) }
       </div>
     );
   }
@@ -58,4 +57,5 @@ BuildingPlan.displayName = 'BuildingPlan';
 BuildingPlan.protoTypes = {
   roomClicked: PropTypes.func.isRequired,
 };
+
 export default BuildingPlan;

@@ -1,4 +1,6 @@
 @import 'xbem';
 @import 'patterns';
 
-@include block(patients) {}
+@include block(patients) {
+  width: 100%;
+}

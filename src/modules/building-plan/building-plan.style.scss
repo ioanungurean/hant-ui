@@ -35,7 +35,8 @@
     }
 
     @include state(isactive) {
-      background-color: #a1d6e2;
+      color: #fff;
+      background-color: #2185d0;
     }
   }
 }

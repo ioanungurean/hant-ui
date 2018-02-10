@@ -1,4 +1,6 @@
 @import 'xbem';
 @import 'patterns';
 
-@include block(sensors) {}
+@include block(sensors) {
+  width: 100%;
+}

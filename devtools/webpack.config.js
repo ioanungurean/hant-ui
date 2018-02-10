@@ -48,7 +48,6 @@ module.exports = (params) => {
 
     plugins: [
       plugins.CommonsChunkPlugin,
-      plugins.ModuleConcatenationPlugin,
       plugins.HtmlWebpackPlugin,
     ],
   }, require('./webpack/' + config.environment)(config));
