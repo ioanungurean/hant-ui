@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
 import { Grid } from 'semantic-ui-react';
 
 import Header from 'components/header';
@@ -8,11 +10,30 @@ import Sidebar from 'components/sidebar';
 import 'semantic-ui-css/semantic.min.css';
 import './app.style.scss';
 
+const getDevices = () => {
+  return axios.post('https://localhost:8443/getDevices', {});
+};
+
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { activeItem: 'blueprints' };
+    this.state = {
+      activeItem: 'blueprints',
+      devices: [],
+      patients: [],
+    };
     this.handleItemClick = this.handleItemClick.bind(this);
+  }
+
+  componentDidMount() {
+    getDevices().then((response) => {
+      this.setState({
+        devices: response.data,
+      });
+    })
+    .catch((error) => {
+      console.error(error);
+    });
   }
 
   handleItemClick(e, { name }) {
@@ -21,13 +42,14 @@ class App extends Component {
 
   render() {
     const { activeItem } = this.state;
+
     return (
       <div className='app'>
         <Header activeItem={activeItem} handleItemClick={this.handleItemClick} />
 
         <div className='app__content'>
           <Sidebar activeItem={activeItem} handleItemClick={this.handleItemClick} />
-          <Main />
+          <Main devices={this.state.devices} />
         </div>
       </div>
     );

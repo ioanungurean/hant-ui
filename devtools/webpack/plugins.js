@@ -15,7 +15,7 @@ module.exports = {
 
   HtmlWebpackPlugin:
     new HtmlWebpackPlugin({
-      title: 'React App',
+      title: 'Hazard Smart Assistant',
       appMountId: 'root',
       inlineManifestWebpackName: 'webpackManifest',
       template: HtmlWebpackTemplate,

@@ -4,8 +4,13 @@ import PropTypes from 'prop-types';
 import './building-plan.style.scss';
 
 const rooms = [
-  'room1', 'room2', 'room3', 'room4', 'hallway3', 'room5', 'room6', 'room7', 'room8', 'hallway1',
-  'hallway2', 'room9', 'room10', 'room11', 'room12', 'room13', 'room14', 'room15', 'room16',
+  { id: 'room1', label: 'Room 1' }, { id: 'room2', label: 'Room 2' }, { id: 'room3', label: 'Room 3' },
+  { id: 'room4', label: 'Room 4' }, { id: 'room5', label: 'Hallway 3' }, { id: 'room6', label: 'Room 6' },
+  { id: 'room7', label: 'Room 7' }, { id: 'room8', label: 'Room 8' }, { id: 'room9', label: 'Room 9' },
+  { id: 'room10', label: 'Hallway 1' }, { id: 'room11', label: 'Hallway 2' }, { id: 'room12', label: 'Room 12' },
+  { id: 'room13', label: 'Room 13' }, { id: 'room14', label: 'Room 14' }, { id: 'room15', label: 'Room 15' },
+  { id: 'room16', label: 'Room 16' }, { id: 'room17', label: 'Room 17' }, { id: 'room18', label: 'Room 18' },
+  { id: 'room19', label: 'Room 19' },
 ];
 
 class BuildingPlan extends Component {
@@ -17,17 +22,18 @@ class BuildingPlan extends Component {
   }
 
   renderRoom(room, index) {
-    const isClicked = this.state.idRoomClicked === room ? ' +isactive' : ``;
-    const isHallway = room.indexOf('hallway') !== -1 ? `--${room}` : '';
+    const label = room.label.toLowerCase();
+    const isClicked = this.state.idRoomClicked === room.id ? ' +isactive' : ``;
+    const isHallway = label.indexOf('hallway') !== -1 ? `--${room.id}` : '';
     const className = `building-plan__room${isHallway}${isClicked}`;
 
     return (
       <div
-        key={room}
+        key={room.id}
         className={className}
-        id={room}
+        id={room.id}
       >
-        {room}
+        {room.label}
       </div>
     );
   }
@@ -42,6 +48,10 @@ class BuildingPlan extends Component {
       this.props.roomClicked(this.state.idRoomClicked);
     });
     event.stopPropagation();
+  }
+
+  roomLabelMapping() {
+
   }
 
   render() {

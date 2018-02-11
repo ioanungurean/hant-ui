@@ -11,6 +11,13 @@
 
     @include element(header) {
       margin-top: 28px!important;
+
+    }
+
+    @include element(list) {
+      @include element(label) {
+        opacity: 0.6;
+      }
     }
   }
 }

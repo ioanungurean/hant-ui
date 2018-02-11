@@ -1,9 +1,9 @@
-const search = (term, array) => {
+const search = (term, array, by) => {
   let searchTerm = term.trim().toLowerCase();
 
-  if (term.length > 0) {
+  if (searchTerm.length > 0) {
     return array.filter((item) => {
-      return item.name.toLowerCase().match(term);
+      return item[by].toLowerCase().match(searchTerm);
     });
   }
 

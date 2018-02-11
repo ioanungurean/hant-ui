@@ -12,7 +12,27 @@ const patients = [
   { id: 'patient3', name: 'Superman', 'avatar': 3, },
   { id: 'patient4', name: 'Someone', 'avatar': 4, },
   { id: 'patient5', name: 'Thor', 'avatar': 5, },
-  { id: 'patient6', name: 'Miracle', 'avatar': 6, },
+  { id: 'patient7', name: 'Admiral', 'avatar': 6, },
+  { id: 'patient8', name: 'Buldog', 'avatar': 7, },
+  { id: 'patient9', name: 'Arise', 'avatar': 8, },
+  { id: 'patient10', name: 'Eternal Envy', 'avatar': 9, },
+  { id: 'patient11', name: 'Cancel', 'avatar': 10, },
+  { id: 'patient12', name: 'Lenovo', 'avatar': 11, },
+  { id: 'patient13', name: 'Hp', 'avatar': 12, },
+  { id: 'patient14', name: 'Tim Berners Lee', 'avatar': 13, },
+  { id: 'patient15', name: 'Somenone Popular', 'avatar': 14, },
+  { id: 'patient16', name: 'Who', 'avatar': 15, },
+  { id: 'patient17', name: 'Me', 'avatar': 16, },
+  { id: 'patient18', name: 'Jin Lou', 'avatar': 17, },
+  { id: 'patient19', name: 'Zhou Wiz', 'avatar': 18, },
+  { id: 'patient20', name: 'Blue Air', 'avatar': 19, },
+  { id: 'patient21', name: 'Meh', 'avatar': 20, },
+  { id: 'patient22', name: 'Run Forest', 'avatar': 21, },
+  { id: 'patient23', name: 'Stop', 'avatar': 22, },
+  { id: 'patient24', name: 'Romania', 'avatar': 23, },
+  { id: 'patient25', name: 'Democracy', 'avatar': 24, },
+  { id: 'patient26', name: 'Justice', 'avatar': 25, },
+  { id: 'patient27', name: 'System', 'avatar': 26, },
 ];
 
 class Patients extends Component {
@@ -49,7 +69,7 @@ class Patients extends Component {
   }
 
   render() {
-    const patients = search(this.state.searchTerm, this.state.patients);
+    const patients = search(this.state.searchTerm, this.state.patients, 'name');
 
     return (
       <div className='patients'>

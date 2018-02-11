@@ -5,7 +5,7 @@ import './statistics.style.scss';
 const Statistics = () => {
   return (
     <Fragment>
-      Statistics
+      <div className='ui medium header patients__header'>Statistics</div>
     </Fragment>
   );
 };

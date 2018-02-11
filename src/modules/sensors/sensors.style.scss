@@ -3,4 +3,10 @@
 
 @include block(sensors) {
   width: 100%;
+
+  @include element(details) {
+    @include state(dimmed) {
+      opacity: 0.6;
+    }
+  }
 }

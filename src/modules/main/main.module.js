@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+
 import { Segment } from 'semantic-ui-react';
 
 import Blueprints from 'modules/blueprints';
@@ -10,13 +11,19 @@ import Logs from 'modules/logs';
 
 import './main.style.scss';
 
+const propsComponent = (Component, props) => {
+  return () => (
+    <Component {...props} />
+  );
+}
+
 const Main = (props) => {
   return (
     <Segment className='main'>
       <Switch>
-        <Route exact path='/' component={Blueprints} />
+        <Route exact path='/' component={propsComponent(Blueprints, {devices: props.devices})} />
         <Route path='/patients' component={Patients} />
-        <Route path='/sensors' component={Sensors} />
+        <Route path='/sensors' component={propsComponent(Sensors, { devices: props.devices })} />
         <Route path='/statistics' component={Statistics} />
         <Route path='/logs' component={Logs} />
       </Switch>

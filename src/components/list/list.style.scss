@@ -2,4 +2,6 @@
 @import 'patterns';
 
 @include block(list) {
+  height: 75vh;
+  overflow-y: scroll;
 }

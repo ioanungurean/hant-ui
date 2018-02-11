@@ -5,7 +5,7 @@
   display: grid;
   width: 100%;
   grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(3, 100px);
+  grid-template-rows: repeat(3, 80px);
   grid-gap: 3px;
 
   @include element(room) {
@@ -16,20 +16,19 @@
 
     &:hover {
       cursor: pointer;
-      // transition: background .15s ease-in;
       border: 1px solid #1995ad;
       background-color: #e8e8e8;
     }
 
-    @include modifier(hallway1) {
+    @include modifier(room10) {
       grid-column: 1 / 5;
     }
 
-    @include modifier(hallway2) {
+    @include modifier(room11) {
       grid-column: 6 / 10;
     }
 
-    @include modifier(hallway3) {
+    @include modifier(room5) {
       grid-column: 5 / 6;
       grid-row: 1 / 4;
     }

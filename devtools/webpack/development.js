@@ -54,7 +54,7 @@ module.exports = (config) => {
       publicPath: '/',
       historyApiFallback: true,
       hot: true,
-      port: 9000,
+      port: 8080,
     },
 
     plugins: [
