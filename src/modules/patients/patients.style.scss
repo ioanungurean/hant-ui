@@ -3,4 +3,10 @@
 
 @include block(patients) {
   width: 100%;
+
+  @include element(search) {
+    @include element(button) {
+      margin-left: 28px;
+    }
+  }
 }

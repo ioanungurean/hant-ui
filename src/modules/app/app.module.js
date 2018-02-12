@@ -14,6 +14,10 @@ const getDevices = () => {
   return axios.post('https://localhost:8443/getDevices', {});
 };
 
+const getPatients = () => {
+  return axios.post('https://localhost:8443/getPatients', {});
+};
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -31,9 +35,18 @@ class App extends Component {
         devices: response.data,
       });
     })
-    .catch((error) => {
-      console.error(error);
-    });
+      .catch((error) => {
+        console.error(error);
+      });
+
+    getPatients().then((response) => {
+      this.setState({
+        patients: response.data,
+      });
+    })
+      .catch((error) => {
+        console.error(error);
+      });
   }
 
   handleItemClick(e, { name }) {
@@ -49,7 +62,7 @@ class App extends Component {
 
         <div className='app__content'>
           <Sidebar activeItem={activeItem} handleItemClick={this.handleItemClick} />
-          <Main devices={this.state.devices} />
+          <Main devices={this.state.devices} patients={this.state.patients} />
         </div>
       </div>
     );

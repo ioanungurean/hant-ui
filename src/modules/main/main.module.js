@@ -21,8 +21,8 @@ const Main = (props) => {
   return (
     <Segment className='main'>
       <Switch>
-        <Route exact path='/' component={propsComponent(Blueprints, {devices: props.devices})} />
-        <Route path='/patients' component={Patients} />
+        <Route exact path='/' component={propsComponent(Blueprints, { devices: props.devices })} />
+        <Route path='/patients' component={propsComponent(Patients, { patients: props.patients })} />
         <Route path='/sensors' component={propsComponent(Sensors, { devices: props.devices })} />
         <Route path='/statistics' component={Statistics} />
         <Route path='/logs' component={Logs} />

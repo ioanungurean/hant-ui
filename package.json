@@ -25,6 +25,7 @@
     "react-router-dom": "^4.2.2",
     "semantic-ui-css": "^2.2.14",
     "semantic-ui-react": "^0.77.2",
+    "underscore": "^1.8.3",
     "xbem": "^0.0.8"
   },
   "devDependencies": {
