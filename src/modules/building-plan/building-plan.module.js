@@ -21,11 +21,22 @@ class BuildingPlan extends Component {
     this.roomClicked = this.roomClicked.bind(this);
   }
 
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({
+        alarm: rooms[Math.floor(Math.random() * rooms.length)].id,
+      }, () => {
+        console.log('Updating', this.state.alarm);
+      });
+    }, 10000);
+  }
+
   renderRoom(room, index) {
     const label = room.label.toLowerCase();
     const isClicked = this.state.idRoomClicked === room.id ? ' +isactive' : ``;
+    const isAlarm = this.state.alarm === room.id ? ' +isalarm' : ``;
     const isHallway = label.indexOf('hallway') !== -1 ? `--${room.id}` : '';
-    const className = `building-plan__room${isHallway}${isClicked}`;
+    const className = `building-plan__room${isHallway}${isClicked}${isAlarm}`;
 
     return (
       <div
@@ -48,10 +59,6 @@ class BuildingPlan extends Component {
       this.props.roomClicked(this.state.idRoomClicked);
     });
     event.stopPropagation();
-  }
-
-  roomLabelMapping() {
-
   }
 
   render() {

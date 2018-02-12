@@ -37,5 +37,10 @@
       color: #fff;
       background-color: #2185d0;
     }
+
+    @include state(isalarm) {
+      color: #fff;
+      background-color: red ;
+    }
   }
 }

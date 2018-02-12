@@ -41,7 +41,11 @@ class Patients extends Component {
         </div>
         <Image avatar src={`https://randomuser.me/api/portraits/thumb/men/${patient.idPerson}.jpg`} />
         <div className='content'>
-          <div className='header'>Patient {patient.idPerson}</div>
+          <div className='header'>
+            Patient {patient.idPerson} &emsp;
+            {patient.cameraID && (<span className='sensors__details +dimmed'>Room : {patient.cameraID} &emsp;</span>)}
+          </div>
+
         </div>
       </div>
     );
@@ -49,7 +53,7 @@ class Patients extends Component {
 
   evacuationOrdering() {
     this.setState((prevState) => ({
-      patients: sortBy(prevState.patients, 'age'),
+      patients: sortBy(prevState.patients, 'evacPriority'),
     }));
   }
 
